@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="xtended"
+           fetch="https://github.com/Project-Xtended-Fan-Edition"
+           revision="refs/heads/xu" />
+
+  <remote  name="bitbucket"
+           fetch="https://bitbucket.org/projectmatrixx"
+           sync-c="true"
+           sync-j="4"
+           revision="refs/heads/14.0" />
+
+
+  <project path="android" name="manifest" remote="xtended" />
+
+  <project path="bootable/recovery" name="bootable_recovery" groups="pdk" remote="xtended" />
+
+  <project path="build/make" name="build_make" groups="pdk" remote="xtended">
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/soong" name="build_soong" groups="pdk,tradefed" remote="xtended" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+
+  <project path="device/lineage/sepolicy" name="device_lineage_sepolicy" remote="xtended" />
+
+  <project path="frameworks/av" name="android_frameworks_av" groups="pdk" remote="xtended" />
+  <project path="frameworks/base" name="frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="xtended" />
+
+  <project path="lineage-sdk" name="lineage-sdk" remote="xtended" />
+
+  <project path="packages/apps/Backgrounds" name="packages_apps_Backgrounds" remote="xtended" />
+  <project path="packages/apps/Contacts" name="packages_apps_Contacts" remote="xtended"  /> 
+  <project path="packages/apps/crDroidSettings" name="packages_apps_Xtensions" remote="xtended" />
+  <project path="packages/apps/Dialer" name="packages_apps_Dialer" groups="pdk-fs" remote="xtended"  />
+  <project path="packages/apps/Launcher3" name="packages_apps_Launcher3" remote="xtended" />  
+  <project path="packages/apps/LineageParts" name="packages_apps_LineageParts" remote="xtended" />
+  <project path="packages/apps/Messaging" name="packages_apps_Messaging" remote="xtended"  /> 
+  <project path="packages/apps/OmniStyle" name="packages_apps_OmniStyle" remote="xtended" />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" groups="pdk-fs" remote="xtended" />
+  <project path="packages/apps/SetupWizard" name="packages_apps_SetupWizard" remote="xtended" />
+  <project path="packages/apps/Updater" name="packages_apps_Updater" remote="xtended" />
+
+  <project path="packages/modules/Wifi" name="packages_modules_Wifi" groups="pdk-cw-fs,pdk-fs" remote="xtended" />
+
+  <project path="packages/services/OmniJaws" name="packages_services_OmniJaws" remote="xtended" />
+
+  <project path="system/core" name="system_core" groups="pdk" remote="xtended" />
+  <project path="system/memory/lmkd" name="system_memory_lmkd" groups="pdk" remote="xtended" />
+
+  <project path="vendor/addons" name="vendor_addons" remote="xtended" />
+  <project path="vendor/lineage" name="vendor_xtended" remote="xtended" />
+  <project path="vendor/XtendedOTA" name="vendor_XtendedOTA" remote="xtended"  />
+  <project path="vendor/pixel-framework" name="vendor_pixel-framework" remote="xtended" />
+  <project path="vendor/gapps" name="android_vendor_gapps" remote="bitbucket" />
+</manifest>
