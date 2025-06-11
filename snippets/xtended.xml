@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- Remotes -->
+  <remote  name="xtended"
+           fetch="https://github.com/Project-Xtended-FE"
+           revision="refs/heads/16.1" />
+
+  <!-- Android Manifest  -->
+  <project path="manifest" name="manifest" remote="xtended" />
+
+  <!-- Build -->
+  <project path="build/make" name="build_make" groups="pdk,sysui-studio" remote="xtended" >
+    <linkfile dest="build/CleanSpec.mk" src="CleanSpec.mk" />
+    <linkfile dest="build/buildspec.mk.default" src="buildspec.mk.default" />
+    <linkfile dest="build/core" src="core" />
+    <linkfile dest="build/envsetup.sh" src="envsetup.sh" />
+    <linkfile dest="build/target" src="target" />
+    <linkfile dest="build/tools" src="tools" />
+  </project>
+
+  <project path="build/soong" name="build_soong" groups="pdk,tradefed,sysui-studio" remote="xtended" >
+    <linkfile dest="Android.bp" src="root.bp" />
+    <linkfile dest="bootstrap.bash" src="bootstrap.bash" />
+  </project>
+
+  <!-- Bootable -->
+  <project path="bootable/recovery" name="bootable_recovery" groups="pdk-cw" remote="xtended" />
+
+  <!-- Frameworks -->
+  <project path="frameworks/base" name="frameworks_base" groups="pdk-cw-fs,pdk-fs,sysui-studio" remote="xtended" />
+
+  <!-- Packages repos -->
+  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="xtended" />
+  <project path="packages/apps/Singularity" name="packages_apps_Xtensions" groups="pdk-fs,sysui-studio" remote="xtended" />
+  <project path="packages/apps/LineageParts" name="packages_apps_LineageParts" remote="xtended" />
+  <project path="packages/apps/OmniStyle" name="packages_apps_OmniStyle" groups="pdk-fs" remote="xtended" />
+  <project path="packages/apps/SetupWizard" name="packages_apps_SetupWizard" remote="xtended" />
+  <project path="packages/apps/Updater" name="packages_apps_Updater" remote="xtended"/>
+
+  <!-- Lineage SDK  -->
+  <project path="lineage-sdk" name="lineage-sdk" remote="xtended" />
+
+  <!-- Sepolicy -->
+  <project path="device/lineage/sepolicy" name="device_xtended_sepolicy" remote="xtended" />
+
+  <!-- Vendor repos -->
+  <project path="vendor/apn" name="vendor_apn" remote="xtended" />
+  <project path="vendor/extras" name="vendor_extras" remote="xtended" />
+  <project path="vendor/fontbox" name="vendor_fontbox" remote="xtended" />
+  <project path="vendor/lineage" name="vendor_xtended" remote="xtended" />
+  <project path="vendor/pixel-style" name="vendor_pixel-style" remote="xtended" />
+
+</manifest>

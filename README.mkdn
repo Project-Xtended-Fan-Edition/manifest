@@ -1,36 +1,75 @@
-LineageOS
-===========
+<p align="center">
+<img src="https://github.com/Project-Xtended-FE/manifest/blob/16.0/X_banner.png">
+</p>
 
-Getting started
----------------
-
-To get started with Android/LineageOS, you'll need to get familiar with [Source Control Tools](https://source.android.com/setup/develop).
-
-To initialize your local repository using the LineageOS trees, use a command like this:
+### 1. Setup Build environment
+Setup your Build Environment and related dependencies from [HERE](https://source.android.com/docs/setup/build/building)
+#
+### 2. Install
+```bash
+sudo apt install -y jq
 ```
-repo init -u https://github.com/LineageOS/android.git -b lineage-23.0 --git-lfs
+#
+### 3. Initialize Xtended source
+~~~bash
+repo init -u https://github.com/Project-Xtended-Fan-Edition/manifest -b 16.1 --git-lfs
+~~~
+#
+### 4. Sync the repository ###
+~~~bash
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+~~~
+#
+### 5. Start building Xtended
 ```
-Then to sync up:
+. b*/env*
 ```
-repo sync
 ```
-Please see the [LineageOS Wiki](https://wiki.lineageos.org/) for building instructions, by device.
+lunch lineage_codename-bp2a-user
+```
+```
+m xtended
+``` 
+#
+### 5. Contributions
+To submit changes/patches, please send a pull request on GitHub. We will review and merge.
+#
+### 6. How to get Official Maintainer
+<details>
+<br>
+<summary><b>Make sure you can follow our rules-and-guidelines</b></summary>
 
+## Project-Xtended Official Requirements
 
-Submitting patches
-------------------
-Patches are always welcome! Please submit your patches via LineageOS Gerrit!
+- You must have knowledge about source control tools such as git and repo.
+- Device sources should be public on our official [Device Github](https://github.com/orgs/Xtended-Devices/repositories)
+- Device sources must have proper commit history & authorship.
+- All sources must be fully synced (pushed to GitHub) prior to every official build release
+- Maintainers must test every build before release this including with testers if possible in order to avoid issues
+- A Forum thread link must be made using [Official template](https://raw.githubusercontent.com/Project-Xtended/docs/master/XT-ThreadTemplate.txt) with your build on a dedicated community like XDA for example.
+- Forum thread must contain all the device documentation such as installation steps,download links, sources etc.
+- All hardware & basic sensors function must be operational 
+- You can't redirect your official build's download link, Use only official downlaod server for release.
 
-Simply follow our guide on [how to submit patches](https://wiki.lineageos.org/submitting-patch-howto.html).
+<b>After following above just message to Mukesh over [Telegram](https://telegram.me/mukesh22584) with the device you want to maintain.</b>
+</details>
 
-To view the status of your and others' patches, visit [LineageOS Gerrit Code Review](https://review.lineageos.org/).
+#
 
+### Thanks to our open source communities
+We are grateful to all the open source communities that have made this possible. Here it is worth to give them credit. 
 
-Buildbot
---------
-
-All supported devices are built weekly and periodically as changes are committed to ensure the source trees remain buildable.
-
-You can view the current build statuses at [LineageOS Buildkite](https://buildkite.com/lineageos).
-
-Builds produced weekly by the buildbot can be downloaded from [LineageOS downloads](https://download.lineageos.org/).
+- AOSP
+- AOSPA
+- Arrow OS
+- crDroid Android
+- DerpFest
+- Flamingo-OS
+- LineageOS
+- OmniROM
+- PixelExperience
+- POSP
+- ProtonAOSP
+- StagOS
+- Statix OS
+- YAAP
